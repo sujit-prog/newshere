@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* Reset margins and padding for all elements */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f4f4f9;  /* Light background for the body */
+  color: #333;  /* Dark text for contrast */
+  line-height: 1.6;  /* Better line spacing for readability */
+}
+
+/* Add some padding for the main container */
+.container {
+  padding: 20px;
+}
+
+/* Style for the heading */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #333;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+/* Add a subtle shadow to cards */
+.card {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);  /* Lift the card on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for card images */
+.card-img-top {
+  border-radius: 8px 8px 0 0;  /* Rounded top corners */
+  height: 200px;
+  object-fit: cover;  /* Ensures the image covers the area without distorting */
+}
+
+/* Styling for the card body */
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Button for the "Read More" link */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+/* Styling for the spinner (loading animation) */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.4em;
+  margin-top: 50px;
+}
+
+/* Style for the small text (author, date, source) */
+.card-text small {
+  color: #777;
+}
+/* Styling for infinite scroll loading state */
+.infinite-scroll-component {
+  padding: 20px 0;
+}
+
+.infinite-scroll-component .spinner-border {
+  margin: 0 auto;
+  display: block;
+}
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 15px;  /* Adjust card spacing on smaller screens */
+  }
+
+  h1 {
+    font-size: 2rem;  /* Smaller heading font size on mobile */
+  }
+
+  .card-img-top {
+    height: 150px;  /* Make images smaller on mobile */
+  }
+
+  .container {
+    padding: 10px;  /* Adjust container padding */
+  }
+}
+
