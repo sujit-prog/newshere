@@ -27,7 +27,9 @@ const News = (props) => {
         props.setProgress(10);
 
         const offset = (page - 1) * props.pageSize;
-        const url = `http://api.mediastack.com/v1/news?access_key=${apiKey}&countries=${props.country}&categories=${props.category}&languages=en&sort=published_desc&limit=${props.pageSize}&offset=${offset}`;
+        const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const baseUrl = isLocalhost ? 'http://api.mediastack.com/v1/news' : '/api/news';
+        const url = `${baseUrl}?access_key=${apiKey}&countries=${props.country}&categories=${props.category}&languages=en&sort=published_desc&limit=${props.pageSize}&offset=${offset}`;
 
         try {
             // Fetch the data from the API
@@ -86,7 +88,9 @@ const News = (props) => {
         if (articles.length >= totalResults) return; // Prevent unnecessary fetch if all data is loaded
         const nextPage = page + 1;
         const offset = (nextPage - 1) * props.pageSize;
-        const url = `http://api.mediastack.com/v1/news?access_key=${apiKey}&countries=${props.country}&categories=${props.category}&languages=en&sort=published_desc&limit=${props.pageSize}&offset=${offset}`;
+        const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const baseUrl = isLocalhost ? 'http://api.mediastack.com/v1/news' : '/api/news';
+        const url = `${baseUrl}?access_key=${apiKey}&countries=${props.country}&categories=${props.category}&languages=en&sort=published_desc&limit=${props.pageSize}&offset=${offset}`;
         setPage(nextPage);
         try {
             let data = await fetch(url);

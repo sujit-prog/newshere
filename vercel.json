@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/news",
+      "destination": "http://api.mediastack.com/v1/news"
+    }
+  ]
+}
