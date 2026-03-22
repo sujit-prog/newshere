@@ -15,33 +15,32 @@ const NewsItem = (props) => {
     const formattedDescription = description || "No description available";
 
     return (
-        <div className="my-3">
-            <div className="card">
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'flex-end',
-                    position: 'absolute',
-                    right: '0'
-                }}>
-                    <span className="badge rounded-pill bg-danger"> {source || "Unknown source"} </span>
+        <div className="h-100 mb-4 flex-grow-1">
+            <div className="news-card h-100">
+                <div className="source-badge-container">
+                    <span className="badge badge-source">{source || "Unknown source"}</span>
                 </div>
-                <img 
-                    src={imageUrl || fallbackImage} 
-                    className="card-img-top" 
-                    alt={formattedTitle} 
-                    onError={(e) => e.target.src = fallbackImage} // Fallback if image fails to load
-                />
+                <div className="img-wrapper">
+                    <img 
+                        src={imageUrl || fallbackImage} 
+                        className="card-img-top" 
+                        alt={formattedTitle} 
+                        onError={(e) => e.target.src = fallbackImage} // Fallback if image fails to load
+                    />
+                </div>
                 <div className="card-body">
                     <h5 className="card-title">{formattedTitle}</h5>
                     <p className="card-text">{formattedDescription}</p>
-                    <p className="card-text">
-                        <small className="text-muted">
-                            By {!author ? "Unknown" : author} on {formattedDate}
-                        </small>
-                    </p>
-                    <a rel="noreferrer" href={newsUrl} target="_blank" className="btn btn-sm btn-dark">
-                        Read More
-                    </a>
+                    <div className="mt-auto d-flex flex-column">
+                        <p className="card-text mb-2">
+                            <small className="text-muted">
+                                By {!author ? "Unknown" : author} on {formattedDate}
+                            </small>
+                        </p>
+                        <a rel="noreferrer" href={newsUrl} target="_blank" className="btn btn-read-more align-self-start">
+                            Read More
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,4 +48,3 @@ const NewsItem = (props) => {
 };
 
 export default NewsItem;
-
