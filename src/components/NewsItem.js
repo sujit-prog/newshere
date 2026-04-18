@@ -5,7 +5,7 @@ const NewsItem = (props) => {
     const { title, description, imageUrl, newsUrl, author, date, source } = props;
 
     // Fallback image URL
-    const fallbackImage = "https://fdn.gsmarena.com/imgroot/news/21/08/xiaomi-smart-home-india-annoucnements/-476x249w4/gsmarena_00.jpg";
+    const fallbackImage = "https://res.cloudinary.com/dhigdp9hk/image/upload/q_auto/f_auto/v1776522428/absolutvision-WYd_PkCa1BY-unsplash_iyhdwx.jpg";
 
     // Format date if provided, else show a default string
     const formattedDate = date ? new Date(date).toLocaleDateString() : "Date not available";
